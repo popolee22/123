@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Lee Bui Fah's ePortfolio</title>
+    <link rel="stylesheet" href="css/theme1.css" id="theme-style">
+</head>
+<body>
+    <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Lee Bui Fah</h1>
+            <p class="subtitle">Master's Student / Grab Driver</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ABOUT ME</a></li>
+                <li><a href="essays.html">ESSAYS</a></li>
+                <li><a href="artwork.html" class="active">PROJECTS</a></li>
+                <li><a href="certificates.html">CERTIFICATES</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="projects">
+            <div class="content-wrapper">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/project_management.jpg" alt="IT Management Project - Project Management Concept">
+                        </div>
+                        <div class="project-content">
+                            <h3>IT Management Research Project</h3>
+                            <p>Current research project at UNIMAS focusing on the integration of technology in public service delivery. The project explores key aspects of modern project management including stakeholder collaboration, resource optimization, and strategic planning, combining my background in Public Management with IT Management studies.</p>
+                            <a href="#" class="read-more">View Project →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/project2.jpg" alt="UUM Final Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>UUM Final Year Project in Public Management</h3>
+                            <p>Bachelor's degree final project completed at UUM University, focusing on public service delivery and management in Sarawak.</p>
+                            <a href="#" class="read-more">View Project →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lee Bui Fah</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            const themeStyle = document.getElementById('theme-style');
+            const currentTheme = themeStyle.getAttribute('href');
+            const newTheme = currentTheme === 'css/theme1.css' ? 'css/theme2.css' : 'css/theme1.css';
+            themeStyle.setAttribute('href', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.getElementById('theme-style').setAttribute('href', savedTheme);
+            }
+        });
+    </script>
+</body>
+</html> 
