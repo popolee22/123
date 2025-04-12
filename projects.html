@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Lee Bui Fah's ePortfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/theme1.css" id="theme-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Lee Bui Fah</h1>
+            <p class="subtitle">Master's Student / Grab Driver</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">ABOUT ME</a></li>
+                <li><a href="essays.html">ESSAYS</a></li>
+                <li><a href="projects.html" class="active">PROJECTS</a></li>
+                <li><a href="certificates.html">CERTIFICATES</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="projects-section">
+            <h2><i class="fas fa-project-diagram"></i> My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>IT Management Research Project</h3>
+                        <p>Current research project at UNIMAS focusing on the integration of technology in public service delivery. The project explores key aspects of modern project management including stakeholder collaboration, resource optimization, and strategic planning, combining my background in Public Management with IT Management studies.</p>
+                        <div class="project-tech">
+                            <span>Research Methods</span>
+                            <span>Data Analysis</span>
+                            <span>Technology Integration</span>
+                        </div>
+                        <a href="#" class="view-project">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>UUM Final Year Project in Public Management</h3>
+                        <p>Bachelor's degree final project completed at UUM University, focusing on public service delivery and management in Sarawak.</p>
+                        <div class="project-tech">
+                            <span>Public Management</span>
+                            <span>Service Delivery</span>
+                            <span>Research</span>
+                        </div>
+                        <a href="#" class="view-project">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lee Bui Fah</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            const themeStyle = document.getElementById('theme-style');
+            const currentTheme = themeStyle.getAttribute('href');
+            const newTheme = currentTheme === 'css/theme1.css' ? 'css/theme2.css' : 'css/theme1.css';
+            themeStyle.setAttribute('href', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.getElementById('theme-style').setAttribute('href', savedTheme);
+            }
+        });
+    </script>
+</body>
+</html>
